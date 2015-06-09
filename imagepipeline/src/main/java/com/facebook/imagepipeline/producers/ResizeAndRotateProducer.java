@@ -159,6 +159,7 @@ public class ResizeAndRotateProducer
       mProducerContext.getListener().
           onProducerFinishWithSuccess(mProducerContext.getId(), PRODUCER_NAME, null);
       getConsumer().onNewResult(ret, isLast);
+        CloseableReference.closeSafely(ret.first);
     }
   }
 
